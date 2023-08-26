@@ -4,28 +4,26 @@ O princípio de menor privilégio é um conceito de segurança bem conhecido que
 
 As credenciais do usuário raiz oferecem acesso ilimitado a uma conta e a todos os seus recursos. Com isso em mente, é fácil ver por que o acesso raiz raramente é necessário. Em vez disso, você deve usar usuários de gerenciamento de identidade e acesso (IAM) e funções do IAM com permissões restritas.
 
-![](aws\Menu-User.png)
+<p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/Menu-User.png"/></p>
 
 Como adicionar um administrador: 
 
 1. Faça login em sua conta da AWS usando suas credenciais de usuário raiz. 
-2. **Utilize grupos para dar permissões.** Ao menos um grupo precisa ser criado, vamos criar um grupo que terá acesso full, acesso de Administrador (root) a esta conta, para isso siga os abaixo. Vá em Groups - Create New Group.![](aws\aws.png)
-3.  Defina um nome para o Grupo. No exemplo, está Admins, pois este grupo terá acesso full na conta.![](aws\NomeGroup.png)
-4. Adicione policies para este grupo. A policy que dá acesso full a conta é a AdministratorAccess. Dessa forma podemos vincular ao menos um usuário a este grupo e ao invés de utilizar o root para acessar a conta (conforme boas práticas), utilizaremos este novo usuário que será criado no segundo passo.![](aws\AddPolicyGroup-1.png)
-5. Revise e crie o grupo.![](aws\ReviewGroup-Create.png)
-
-
+2. **Utilize grupos para dar permissões.** Ao menos um grupo precisa ser criado, vamos criar um grupo que terá acesso full, acesso de Administrador (root) a esta conta, para isso siga os abaixo. Vá em Groups - Create New Group.<p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/aws.png"/></p>
+3.  Defina um nome para o Grupo. No exemplo, está Admins, pois este grupo terá acesso full na conta.<p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/NomeGroup.png"/></p>
+4. Adicione policies para este grupo. A policy que dá acesso full a conta é a AdministratorAccess. Dessa forma podemos vincular ao menos um usuário a este grupo e ao invés de utilizar o root para acessar a conta (conforme boas práticas), utilizaremos este novo usuário que será criado no segundo passo.<p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/AddPolicyGroup-1.png"/></p>
+5. Revise e crie o grupo.<p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/ReviewGroup-Create.png"/></p>
 
 Feito isso, já podemos partir para o segundo passo, criar ao menos um usuário e vincular a este grupo, para não utilizarmos mais o root no dia a dia.
 
 
 
-1. **Crie usuários.** Um usuário com acesso de administrador precisa ser criado para que a conta root não seja utilizada nas tarefas diárias, para isso siga os passos abaixo. Vá em Users - Add user. ![](aws\Menu-User.png)
-2. Escolha o nome do usuário. Como esse usuário irá fazer o papel de Admin da conta, você pode marcar os dois tipos de acesso, via acesso programático (permite que você utilize as credenciais de acesso - Access Key ID e Secret access Key - para acessar a AWS) e via console, já coloque uma senha forte e assim não será necessário alterar depois. ![](C:\Users\erico\Pictures\Screenshots\Captura de Tela (2).png)
-3. Vincule o usuário a um grupo. Ou escolha outras opções de acordo com a necessidade. Aqui vamos vincular o usuário ao grupo Admins recém criados. ![](aws\User-step2.png)
-4. Adicione Tags ao usuário. Este item é opcional e vamos deixá-lo em branco, mas ele serve para identificar e/ou separar os recursos AWS, ele utiliza o conceito chave:valor. Por exemplo, queremos separar usuários, máquinas, buckets utilizadas pelo departamento Financeiro da empresa dos itens do departamento Fiscal, poderíamos colocar Departamento: Financeiro ou Departamento: Fiscal, de acordo com o uso/criação. ![](aws\User-step3.png)
-5. Revisar as informações e criar o usuário.![](aws\User-step4.png)
-6. Usuário criado, e ele traz as informações de acesso para este usuário, como: URL para acessar o console, afinal não utilizaremos mais a opção Root user e sim IAM user, e caso não utilize a url fornecida nesse momento, você precisará saber o ID da conta do root. Além disso, também é fornecido o Access Key ID e Secret access Key desse usuário.![](aws\user-step5.png)
+1. **Crie usuários.** Um usuário com acesso de administrador precisa ser criado para que a conta root não seja utilizada nas tarefas diárias, para isso siga os passos abaixo. Vá em Users - Add user. <p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/Menu-User.png"/></p>
+2. Escolha o nome do usuário. Como esse usuário irá fazer o papel de Admin da conta, você pode marcar os dois tipos de acesso, via acesso programático (permite que você utilize as credenciais de acesso - Access Key ID e Secret access Key - para acessar a AWS) e via console, já coloque uma senha forte e assim não será necessário alterar depois. <p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/\aws/Captura de Tela (2).png"/></p>
+3. Vincule o usuário a um grupo. Ou escolha outras opções de acordo com a necessidade. Aqui vamos vincular o usuário ao grupo Admins recém criados. <p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/User-step2.png"/></p>
+4. Adicione Tags ao usuário. Este item é opcional e vamos deixá-lo em branco, mas ele serve para identificar e/ou separar os recursos AWS, ele utiliza o conceito chave:valor. Por exemplo, queremos separar usuários, máquinas, buckets utilizadas pelo departamento Financeiro da empresa dos itens do departamento Fiscal, poderíamos colocar Departamento: Financeiro ou Departamento: Fiscal, de acordo com o uso/criação. <p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/User-step3.png"/></p>
+5. Revisar as informações e criar o usuário.<p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/User-step4.png"/></p>
+6. Usuário criado, e ele traz as informações de acesso para este usuário, como: URL para acessar o console, afinal não utilizaremos mais a opção Root user e sim IAM user, e caso não utilize a url fornecida nesse momento, você precisará saber o ID da conta do root. Além disso, também é fornecido o Access Key ID e Secret access Key desse usuário.<p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/user-step5.png"/></p>
 
 **Importante:** Faça o Download do .csv ou salve a Access Key ID e Secret access Key ou envie por e-mail, pois essa será a única vez que poderá visualizar essa informação.
 
@@ -43,7 +41,7 @@ Feito isso, já podemos partir para o segundo passo, criar ao menos um usuário 
 
 Uma instância de SageMaker notebook da Amazon é uma instância de computação totalmente gerenciada de aprendizado de máquina (ML) do Amazon Elastic Compute Cloud (Amazon EC2)  fornece ambientes de computação virtual capacidade escalável, que executa o aplicativo Jupyter Notebook. Você usa a instância do notebook para criar e gerenciar notebooks Jupyter para pré-processamento de dados e para treinar e implantar modelos de aprendizado de máquina.
 
-![](aws\gs-ni-create-instance.gif)
+<p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/gs-ni-create-instance.gif"/></p>
 
 1. Abra o SageMaker console da Amazon em https://console.aws.amazon.com/sagemaker/.
 2. Escolha **Instâncias do Notebook** e, em seguida, escolha **Create notebook instance**.
