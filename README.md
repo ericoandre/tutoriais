@@ -1,12 +1,11 @@
-## Crie uma conta de administrador
+# Crie uma conta de administrador
 
 O princípio de menor privilégio é um conceito de segurança bem conhecido que limita o acesso de um usuário apenas ao que é necessário para realizar seu trabalho. 
 
 As credenciais do usuário raiz oferecem acesso ilimitado a uma conta e a todos os seus recursos. Com isso em mente, é fácil ver por que o acesso raiz raramente é necessário. Em vez disso, você deve usar usuários de gerenciamento de identidade e acesso (IAM) e funções do IAM com permissões restritas.
 
-<p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/Menu-User.png"/></p>
 
-Como adicionar um administrador: 
+## Como adicionar um administrador: 
 
 1. Faça login em sua conta da AWS usando suas credenciais de usuário raiz. 
 2. **Utilize grupos para dar permissões.** Ao menos um grupo precisa ser criado, vamos criar um grupo que terá acesso full, acesso de Administrador (root) a esta conta, para isso siga os abaixo. Vá em Groups - Create New Group.<p align="center"><img alt="" src="https://github.com/ericoandre/tutoriais/blob/main/aws/aws.png"/></p>
